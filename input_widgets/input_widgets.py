@@ -38,10 +38,32 @@ st.write(select)
 # Mutliselect
 st.divider()
 
+multiselect = st.multiselect("Choose as many columns as you want", 
+                             options=df.columns[1:], default=["col1"], max_selections=3)
+
+st.write(multiselect)
 
 # Slider
 st.divider()
 
+slider = st.slider("Pick a number", min_value=0, max_value=10, value=0, step=1)
+st.write(slider)
+
 
 # Text input
 st.divider()
+
+text_input = st.text_input("What's your name", placeholder="Jhon Doe")
+st.write(f"Your name is {text_input}")
+
+# Number input
+st.divider()
+
+number_input = st.number_input("Pick a number", min_value=0, max_value=10, value=0, step=1)
+st.write(f"You picked {number_input}")
+
+# Text Area
+st.divider()
+
+text_area = st.text_area("What do you want to tell me?", height=200, placeholder="Write your message here")
+st.write(text_area)
